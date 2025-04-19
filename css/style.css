@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Caudex';
+    src: url('Fonts/Caudex-Regular.ttf') format('truetype');
+    font-weight: normal;
+  }
+  
+@font-face {
+    font-family: 'Caudex';
+    src: url('Fonts/Caudex-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+
+/* Animation Keyframes */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Reset & base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+  }
+  
+  /* Sticky Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0; /* ← makes sure it starts at the edge */
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.95); /* dark translucent */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-family: 'Caudex', sans-serif;
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links a {
+    font-family: 'Caudex', sans-serif;
+    text-decoration: none;
+    color: #cccccce8;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    font-weight: bold;
+    color: #a02020; /* or any accent color you want */
+  }
