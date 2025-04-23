@@ -33,13 +33,13 @@
     padding: 2.8rem;
     font-size: 1.3rem;
     text-align: left; /* <<< ADD THIS */
-    animation: fadeInText 1.5s ease-out forwards;
+    animation: fadeInText 0.5s ease-out forwards;
     opacity: 0; /* start transparent */
   }
   .profile-content li,
 .profile-quote {
   opacity: 0;
-  animation: fadeInText 1s ease-out forwards;
+  animation: fadeInText 0.9s ease-out forwards;
 }
 
 .profile-content li:nth-child(1) { animation-delay: 0.1s; }
@@ -51,7 +51,7 @@
 .profile-content li:nth-child(7) { animation-delay: 0.7s; }
 .profile-content li:nth-child(8) { animation-delay: 0.8s; }
 /* ... and so on */
-.profile-quote { animation-delay: 1.1s; }
+.profile-quote { animation-delay: 0.9s; }
   
   .profile-content h2 {
     font-size: 2.5rem;

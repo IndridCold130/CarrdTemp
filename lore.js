@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function initLorePanel() {
       const sidebarItems = document.querySelectorAll('.lore-sidebar li');
       const loreContent = document.getElementById('lore-content');
-  
       // Load the default lore section (Prologue)
       loadLore('components/lore/chapter1.html');
   
@@ -28,7 +27,15 @@ window.addEventListener('DOMContentLoaded', () => {
       fetch(filePath)
         .then(res => res.text())
         .then(data => {
-          document.getElementById('lore-content').innerHTML = data;
+          const loreContent = document.getElementById('lore-content');
+    
+          // Set the new HTML
+          loreContent.innerHTML = data;
+    
+          // 🔥 Re-trigger fade animation
+          loreContent.style.animation = 'none';      // reset
+          loreContent.offsetHeight;                  // force reflow
+          loreContent.style.animation = 'fadeInText 1s ease-out forwards';  // reapply
         })
         .catch(err => {
           document.getElementById('lore-content').innerHTML = "<p>Failed to load content.</p>";
