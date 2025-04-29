@@ -37,9 +37,33 @@ body {
   }
   
   body {
+    background-image: url('assets/fantasybackground.png');
+    background-size: cover;            /* makes it fill the screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;      /* stays in place while scrolling */
+    background-color: #0b0b0b;         /* fallback if image doesn't load */
     font-family: 'Segoe UI', sans-serif;
     background-color: #0d0d0d;
     color: #f0f0f0;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 40%,    /* center = transparent */
+      rgba(0, 0, 0, 0.5) 70%,  /* mid area = semi-dark */
+      rgba(0, 0, 0, 0.8) 100%  /* edges = almost black */
+    );
   }
   
   /* Sticky Navbar */
@@ -87,4 +111,32 @@ body {
   .nav-links a:hover {
     font-weight: bold;
     color: #a02020; /* or any accent color you want */
+  }
+
+  .ooc-list {
+    list-style-type: disc; /* or none if you want no bullet */
+    padding-left: 1.5rem;  /* indent */
+    margin-bottom: 1.5rem;
+    text-align: left;         /* force left alignment */
+    list-style-position: inside;
+    padding-left: 1rem;       /* slight padding inward */
+    margin: 1rem 0;
+  }
+  
+  .ooc-list li {
+    margin-bottom: 0.5rem; /* smaller gap between points */
+    line-height: 1.4;      /* slightly tighter lines */
+  }
+
+  .ooc-list li::marker {
+    color: #c2a55f; /* golden bullets */
+   /* color: #c2a55f; /* golden bullets */
+    font-size: 1.5rem;
+    content: "☩ "; /* replaces default dot */
+  }
+
+  .ooc-list li:hover {
+    color: #fff8dc;
+    text-shadow: 0 0 4px #d6b45f;
+    transition: 0.3s ease;
   }
